@@ -9,7 +9,7 @@ const LandingPage = ({ onEnter }) => {
   }, []);
 
   return (
-      <div class="bg-[url('/public/assets/fondo4.png')] bg-cover bg-center bg-no-repeat h-screen">
+      <div className="bg-[url('/assets/fondo4.png')] bg-cover bg-center bg-no-repeat h-screen">
 
       {/* Animated background elements */}
       <div className="absolute inset-0">
