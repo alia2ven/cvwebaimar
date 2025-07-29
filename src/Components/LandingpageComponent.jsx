@@ -37,7 +37,7 @@ const LandingPage = ({ onEnter }) => {
 
   <img
     alt=""
-    src="/assets/fondo4.png"
+    src="/public/assets/fondo4.png"
 
     
     className="w-30 h-30  inline-block size-45 rounded-full ring-2 ring-red shadow-xl/60 transition delay-400 duration-500 ease-in-out transform hover:rotate-45 "  />
