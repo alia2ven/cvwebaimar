@@ -33,14 +33,9 @@ const LandingPage = ({ onEnter }) => {
         <div className="mb-8">
           <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 p-1">
             <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
-            
+       <img src="/assets/fondo4.png" alt="Fondo" />    
 
-  <img
-    alt=""
-    src="public/vite.svg"
-
-    
-    className="w-30 h-30  inline-block size-45 rounded-full ring-2 ring-red shadow-xl/60 transition delay-400 duration-500 ease-in-out transform hover:rotate-45 "  />
+  
 
             </div>
           </div>
