@@ -25,6 +25,7 @@ const Contact = () => {
   };
 
   return (
+    <section id="ContactoPage">
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-amber-50 py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
@@ -48,7 +49,7 @@ const Contact = () => {
                 <Mail className="w-6 h-6 text-purple-600" />
                 <div>
                   <p className="font-semibold text-slate-800">Email</p>
-                  <p className="text-slate-600">maria.gonzalez@email.com</p>
+                  <p className="text-slate-600">accdelfin@gmail.com</p>
                 </div>
               </div>
 
@@ -56,7 +57,7 @@ const Contact = () => {
                 <Phone className="w-6 h-6 text-purple-600" />
                 <div>
                   <p className="font-semibold text-slate-800">Teléfono</p>
-                  <p className="text-slate-600">+1 (555) 123-4567</p>
+                  <p className="text-slate-600">+34 (034) 123-4567</p>
                 </div>
               </div>
 
@@ -64,7 +65,7 @@ const Contact = () => {
                 <MapPin className="w-6 h-6 text-purple-600" />
                 <div>
                   <p className="font-semibold text-slate-800">Ubicación</p>
-                  <p className="text-slate-600">Ciudad de México, México</p>
+                  <p className="text-slate-600">Palma, Baleares. España</p>
                 </div>
               </div>
 
@@ -72,7 +73,7 @@ const Contact = () => {
                 <Linkedin className="w-6 h-6 text-purple-600" />
                 <div>
                   <p className="font-semibold text-slate-800">LinkedIn</p>
-                  <p className="text-slate-600">linkedin.com/in/mariagonzalez</p>
+                  <p className="text-slate-600">linkedin.com/in/aimar</p>
                 </div>
               </div>
             </div>
@@ -147,6 +148,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

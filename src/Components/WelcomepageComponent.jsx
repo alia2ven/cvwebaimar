@@ -10,6 +10,7 @@ const WelcomePage = () => {
   }, []);
 
   return (
+    <section id="WelcomePage">
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-emerald-50 py-20">
       <div className="container mx-auto px-6">
         <div className={`max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -70,10 +71,17 @@ const WelcomePage = () => {
               </div>
             </div>
           </div>
+
         </div>
+
       </div>
+
+
+
     </div>
+</section>
   );
+
 };
 
 export default WelcomePage;

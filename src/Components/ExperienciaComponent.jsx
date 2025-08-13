@@ -6,25 +6,23 @@ const ProfessionalExperience = () => {
 
   const experiences = [
     {
-      period: '2018 - Presente',
-      position: 'Directora Financiera Senior',
-      company: 'Corporación Global S.A.',
+      period: '2008 - Presente',
+      position: 'Contador Genral',
+      company: 'Gisela S.A.',
       achievements: [
-        'Liderazgo de equipo de 25 profesionales contables',
-        'Implementación exitosa de sistema SAP financiero',
-        'Reducción de 40% en tiempo de cierre mensual',
-        'Optimización de procesos que generaron ahorros de $2M anuales'
+        'CONTADOR GENERAL EN AREA DE COMERCIO POR VENTA DE PRODUCTOS DE HIGIENE Y COSMETICA',
+        'Implementación exitosa de sistema financiero',
+        'Optimización de procesos que generaron ahorros anuales'
       ]
     },
     {
-      period: '2010 - 2018',
-      position: 'Gerente de Auditoría',
+      period: '2005 - 2008',
+      position: 'Gerente de Auditoría Interna',
       company: 'Deloitte & Associates',
       achievements: [
-        'Supervisión de auditorías para empresas Fortune 500',
         'Desarrollo de metodologías de riesgo innovadoras',
         'Certificación de más de 200 estados financieros',
-        'Mentoría de 50+ contadores junior'
+        'Mentoría de contadores junior'
       ]
     },
     {
@@ -40,7 +38,7 @@ const ProfessionalExperience = () => {
     },
     {
       period: '1995 - 2005',
-      position: 'Contadora Pública',
+      position: 'AUDITOR INTERNO SENIOR',
       company: 'Múltiples Organizaciones',
       achievements: [
         'Experiencia diversa en diferentes sectores',
@@ -60,6 +58,7 @@ const ProfessionalExperience = () => {
   }, []);
 
   return (
+    <section id="ExperienciaPage">
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-green-50 py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
@@ -68,21 +67,33 @@ const ProfessionalExperience = () => {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          {/* Timeline navigation */}
+          {
+          /* Timeline navigation */}
           <div className="flex justify-center mb-12 overflow-x-auto">
             <div className="flex space-x-4 bg-white rounded-full p-2 shadow-lg">
               {experiences.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentExperience(index)}
-                  className={`px-4 py-2 rounded-full transition-all ${
-                    currentExperience === index
-                      ? 'bg-gradient-to-r from-emerald-500 to-green-500 text-white'
-                      : 'text-emerald-700 hover:bg-emerald-100'
-                  }`}
-                >
-                  {index + 1}
-                </button>
+                
+             <button
+  key={index}
+  onClick={() => setCurrentExperience(index)}
+  className={`px-4 py-2 rounded-full transition-all ${
+    currentExperience === index
+      ? 'bg-gradient-to-r from-emerald-500 to-green-500 text-white'
+      : 'text-emerald-700 hover:bg-emerald-100'
+  }`}
+>
+  {(() => {
+    switch(index) {
+      case 0: return "Presente";
+      case 1: return "2010-2017";
+      case 2: return "2000-2010";
+      case 3: return "1990-2000";
+      default: return `Sección ${index + 1}`;
+    }
+  })()}
+</button>
+
+
               ))}
             </div>
           </div>
@@ -135,6 +146,7 @@ const ProfessionalExperience = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

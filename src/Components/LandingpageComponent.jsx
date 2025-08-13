@@ -9,7 +9,7 @@ const LandingPage = ({ onEnter }) => {
   }, []);
 
   return (
-      <div className="bg-[url('/assets/fondo4.png')] bg-cover bg-center bg-no-repeat h-screen">
+      <div className="bg-[url('/img/fondo4.png')] bg-cover bg-center bg-no-repeat h-screen">
 
       {/* Animated background elements */}
       <div className="absolute inset-0">
@@ -37,7 +37,7 @@ const LandingPage = ({ onEnter }) => {
 
   <img
     alt=""
-    src="/public/vite.svg.png"
+    src="./assets/f1.JPG"
 
     
     className="w-30 h-30  inline-block size-45 rounded-full ring-2 ring-red shadow-xl/60 transition delay-400 duration-500 ease-in-out transform hover:rotate-45 "  />
@@ -56,13 +56,29 @@ const LandingPage = ({ onEnter }) => {
           </p>
         </div>
 
-        <button
-          onClick={onEnter}
-          className="group bg-gradient-to-r from-brown-600 to-green-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
-        >
-          Explorar Perfil
-          <ChevronRight className="inline-block ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-        </button>
+        <button 
+  onClick={() => {
+    console.log("Botón clickeado");
+    
+    // Verificar si existe el elemento
+    const element = document.getElementById('WelcomePage');
+    console.log("Elemento encontrado:", element);
+    
+    if (element) {
+      console.log("Scrolleando a elemento");
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      console.log("No se encontró el elemento WelcomePage");
+    }
+  }}
+  className="group bg-gradient-to-r from-brown-600 to-green-600 hover:from-green-700 hover:to-brown-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+>
+  Explorar Perfil
+  <ChevronRight className="inline-block ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+</button>
 
         <div className="mt-12 animate-bounce">
           <ChevronDown className="w-8 h-8 text-purple-300 mx-auto" />

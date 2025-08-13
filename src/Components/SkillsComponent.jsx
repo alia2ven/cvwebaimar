@@ -16,16 +16,16 @@ const Skills = () => {
     {
       title: 'Software Especializado',
       skills: [
-        { name: 'SAP Financial', level: 85 },
+        { name: ' Financial', level: 85 },
         { name: 'QuickBooks Enterprise', level: 90 },
-        { name: 'Excel Avanzado', level: 95 },
-        { name: 'Power BI', level: 80 }
+        { name: 'Excel ', level: 70 },
+        { name: 'Power BI', level: 50 }
       ]
     },
     {
       title: 'Competencias Profesionales',
       skills: [
-        { name: 'Liderazgo de Equipos', level: 93 },
+        { name: 'Trabajo en Equipos', level: 93 },
         { name: 'Comunicación Ejecutiva', level: 88 },
         { name: 'Planificación Estratégica', level: 90 },
         { name: 'Cumplimiento Regulatorio', level: 94 }
@@ -51,6 +51,7 @@ const Skills = () => {
   }, []);
 
   return (
+    <section id="SkillsPage">
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-amber-50 py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
@@ -88,6 +89,7 @@ const Skills = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

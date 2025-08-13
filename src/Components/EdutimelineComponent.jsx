@@ -7,31 +7,31 @@ const EducationTimeline = () => {
     {
       year: '1992',
       title: 'Licenciatura en Contaduría Pública',
-      institution: 'Universidad Nacional Autónoma',
-      description: 'Graduada Magna Cum Laude con especialización en Auditoría Financiera'
+      institution: 'Universidad del Zulia',
+      description: 'Graduada con especialización en Auditoría Financiera'
     },
     {
       year: '1995',
-      title: 'Maestría en Finanzas Corporativas',
+      title: 'Analista Tributario y Auditoría Interna,',
       institution: 'Instituto Tecnológico Superior',
       description: 'Enfoque en análisis financiero avanzado y gestión de riesgos'
     },
     {
       year: '2000',
       title: 'Certificación CPA',
-      institution: 'Colegio de Contadores Públicos',
+      institution: 'Colegio de Contadores Públicos del Zulia Venezuela',
       description: 'Certificación profesional en Contaduría Pública'
     },
     {
       year: '2010',
-      title: 'Diplomado en NIIF',
-      institution: 'Universidad de los Andes',
-      description: 'Especialización en Normas Internacionales de Información Financiera'
+      title: '´Control Interno en Análisis del área administrativa contable, ley de protección de datos',
+      institution: 'Universidad de las Islas Baleares',
+      description: 'Especialización en Normas de Información Financiera'
     },
     {
-      year: '2020',
-      title: 'Certificación en Tecnología Financiera',
-      institution: 'Instituto de Innovación Financiera',
+      year: '2022',
+      title: 'Marketing On Line Comercios al por menor,',
+      institution: 'Instituto de Innovación',
       description: 'Adopción de tecnologías emergentes en contabilidad'
     }
   ];
@@ -45,6 +45,7 @@ const EducationTimeline = () => {
   }, []);
 
   return (
+    <section id="FormacionPage">
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-amber-50 py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
@@ -86,6 +87,7 @@ const EducationTimeline = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">María Elena González</h3>
+            <h3 className="text-xl font-bold mb-4">Aimar Caldera Delfin</h3>
             <p className="text-slate-300 leading-relaxed">
               Contador Público Certificado con más de 30 años de experiencia 
               en soluciones financieras estratégicas.
@@ -26,16 +26,16 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contacto Rápido</h4>
             <div className="space-y-2 text-slate-300">
-              <p>maria.gonzalez@email.com</p>
-              <p>+1 (555) 123-4567</p>
-              <p>Ciudad de México, México</p>
+              <p>accdelfin@email.com</p>
+              <p>+34 (034) 123-4567</p>
+              <p>Palma, Baleares España</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-slate-700 mt-8 pt-8 text-center">
           <p className="text-slate-400">
-            © 2025 María Elena González. Todos los derechos reservados.
+            © 2025 Aimar Caldera Delfin. Todos los derechos reservados.
           </p>
         </div>
       </div>

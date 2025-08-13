@@ -9,9 +9,11 @@ const NeomorphismHeader = () => {
 
   const navLinks = [
     { name: "Inicio", path: "#" },
-    { name: "Servicios", path: "#" },
-    { name: "Nosotros", path: "#" },
-    { name: "Contacto", path: "#" },
+    { name: "Gracias", path: "#WelcomePage" },
+    { name: "Formación", path: "#FormacionPage" },
+     { name: "Skills", path: "#SkillsPage" },
+      { name: "Experiencia", path: "#ExperienciaPage" },
+    { name: "Contacto", path: "#ContactoPage" },
   ];
 
   const handleNavLinkClick = () => {
