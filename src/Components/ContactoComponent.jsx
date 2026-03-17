@@ -211,7 +211,7 @@ const ContactForm = () => {
                   <Phone className="w-6 h-6 text-purple-600" />
                   <div>
                     <p className="font-semibold text-slate-800">Teléfono</p>
-                    <p className="text-slate-600">+34 (034) 123-4567</p>
+                    <p className="text-slate-600">+34 (034) 679886703</p>
                   </div>
                 </div>
 
