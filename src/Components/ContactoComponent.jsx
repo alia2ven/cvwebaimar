@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { Mail, Phone, MapPin, Linkedin, Send, CheckCircle, XCircle, Loader2 } from 'lucide-react';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -16,13 +17,14 @@ const ContactForm = () => {
     message: ''
   });
 
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const EMAIL_CONFIG = {
+    SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -44,19 +46,25 @@ const ContactForm = () => {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) return 'Email inválido';
     if (!formData.subject.trim()) return 'El asunto es requerido';
     if (!formData.message.trim()) return 'El mensaje es requerido';
+    if (formData.message.length < 10) return 'El mensaje debe tener al menos 10 caracteres';
     return null;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const error = validateForm();
-    if (error) {
-      setStatus({ loading: false, success: false, error: true, message: error });
+    const validationError = validateForm();
+    if (validationError) {
+      setStatus({
+        loading: false,
+        success: false,
+        error: true,
+        message: validationError
+      });
       return;
     }
 
-    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+    if (!EMAIL_CONFIG.SERVICE_ID || !EMAIL_CONFIG.TEMPLATE_ID || !EMAIL_CONFIG.PUBLIC_KEY) {
       setStatus({
         loading: false,
         success: false,
@@ -66,7 +74,12 @@ const ContactForm = () => {
       return;
     }
 
-    setStatus({ loading: true, success: false, error: false, message: 'Enviando...' });
+    setStatus({
+      loading: true,
+      success: false,
+      error: false,
+      message: 'Enviando mensaje...'
+    });
 
     try {
       const templateParams = {
@@ -77,22 +90,20 @@ const ContactForm = () => {
         reply_to: formData.email
       };
 
-      console.log('🚀 Enviando:', templateParams);
-
-      const res = await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
+      const response = await emailjs.send(
+        EMAIL_CONFIG.SERVICE_ID,
+        EMAIL_CONFIG.TEMPLATE_ID,
         templateParams,
-        PUBLIC_KEY
+        EMAIL_CONFIG.PUBLIC_KEY
       );
 
-      console.log('✅ RESPUESTA EMAILJS:', res);
+      console.log('✅ Email enviado:', response);
 
       setStatus({
         loading: false,
         success: true,
         error: false,
-        message: 'Mensaje enviado correctamente'
+        message: '¡Mensaje enviado exitosamente!'
       });
 
       setFormData({
@@ -102,31 +113,79 @@ const ContactForm = () => {
         message: ''
       });
 
-    } catch (err) {
-      console.error('❌ ERROR REAL:', err);
+    } catch (error) {
+      console.error('❌ Error:', error);
 
       setStatus({
         loading: false,
         success: false,
         error: true,
-        message: `Error al enviar (${err?.status || 'sin status'})`
+        message: 'Error al enviar. Intenta nuevamente.'
       });
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="name" value={formData.name} onChange={handleChange} placeholder="Nombre" />
-      <input name="email" value={formData.email} onChange={handleChange} placeholder="Email" />
-      <input name="subject" value={formData.subject} onChange={handleChange} placeholder="Asunto" />
-      <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Mensaje" />
+    <section id="ContactoPage">
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-amber-50 py-20">
+        <div className="container mx-auto px-6">
 
-      <button type="submit" disabled={status.loading}>
-        {status.loading ? 'Enviando...' : 'Enviar'}
-      </button>
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-slate-800 mb-6">Contacto</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-green-700 to-purple-700 mx-auto"></div>
+          </div>
 
-      {status.message && <p>{status.message}</p>}
-    </form>
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+
+            {/* INFO */}
+            <div className="space-y-8">
+              <h3 className="text-2xl font-bold text-slate-800">Información de Contacto</h3>
+              <p className="text-lg text-slate-600">
+                Estoy disponible para oportunidades, consultas o colaboraciones.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <Mail /> <span>aimarcvweb@gmail.com</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Phone /> <span>+34 679886703</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <MapPin /> <span>Palma, España</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Linkedin /> <span>linkedin.com/in/aimar</span>
+                </div>
+              </div>
+            </div>
+
+            {/* FORM */}
+            <div className="bg-white p-8 rounded-xl shadow-xl">
+
+              {status.message && (
+                <div className="mb-4">
+                  {status.message}
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <input name="name" value={formData.name} onChange={handleChange} placeholder="Nombre" />
+                <input name="email" value={formData.email} onChange={handleChange} placeholder="Email" />
+                <input name="subject" value={formData.subject} onChange={handleChange} placeholder="Asunto" />
+                <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Mensaje" />
+
+                <button type="submit" disabled={status.loading}>
+                  {status.loading ? 'Enviando...' : 'Enviar'}
+                </button>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
