@@ -203,7 +203,7 @@ const ContactForm = () => {
                   <Mail className="w-6 h-6 text-purple-600" />
                   <div>
                     <p className="font-semibold text-slate-800">Email</p>
-                    <p className="text-slate-600">accdelfin@gmail.com</p>
+                    <p className="text-slate-600">aimarcvweb@gmail.com</p>
                   </div>
                 </div>
 
