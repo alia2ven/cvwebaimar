@@ -26,8 +26,8 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contacto Rápido</h4>
             <div className="space-y-2 text-slate-300">
-              <p>accdelfin@email.com</p>
-              <p>+34 (034) 123-4567</p>
+              <p>aimarcvweb@gmail.com</p>
+              <p>+34 (034) 679886703</p>
               <p>Palma, Baleares España</p>
             </div>
           </div>
@@ -35,7 +35,7 @@ const Footer = () => {
 
         <div className="border-t border-slate-700 mt-8 pt-8 text-center">
           <p className="text-slate-400">
-            © 2025 Aimar Caldera Delfin. Todos los derechos reservados.
+            © 2026 Aimar Caldera Delfin. Todos los derechos reservados.
           </p>
         </div>
       </div>
